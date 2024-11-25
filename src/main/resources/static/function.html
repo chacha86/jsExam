@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function test() {
+      console.log(1);
+    }
+
+    test();
+
+    // 익명함수
+
+    const func = () => {
+        console.log("익명함수");
+    }
+
+    // 익명함수는 일반적인 방법으로 호출 X, 변수에 저장해서 사용하거나 콜백으로 사용
+    func();
+
+    const func2 = (num) => {
+        console.log(num);
+    }
+
+    func2(100);
+
+    // 일회성으로 간단하게 함수가 필요할 때. 콜백으로 많이 사용
+
+</script>
+</html>

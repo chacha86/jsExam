@@ -8,7 +8,13 @@
 </body>
 
 <script>
-    content = "<h1>제목123</h1>";
+
+    content = "";
+
+    for(let i = 0; i < 5; i++) {
+        content += "<h1>제목123</h1>";
+    }
+
     body = document.querySelector("body");
 
     body.innerHTML = content;

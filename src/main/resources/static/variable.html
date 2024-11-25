@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+
+    var a = 10; // 쓰지 말자 -> 스코프 제한 X
+
+    let b = 20; // 변경 가능 -> 스코프 제한 O
+    const c = 30; // 변경 불가능
+
+
+    {
+        var num = 10;
+        let num2 = 20;
+    }
+
+    console.log(num);
+    //console.log(num2);
+
+    console.log(c);
+    c = 50;
+    console.log(c);
+
+    // 무조건 const로 먼저 만들어라.
+    // 그다음에 변경해야할 것들만 let으로 변경
+
+
+
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+
+    // JavaScript Object Notation -> JSON
+
+    const happy = {
+        kind: "치와와",
+        age : 5,
+        name: "해피"
+    };
+
+    const arr = [1,2,3,4,5]; // 숫자 배열
+
+    // 객체 배열
+    const dogs = [{
+        age: 4,
+        name: "맥스"
+    },
+    {
+        age: 7,
+        name: "흑구"
+    }];
+
+    console.log(happy.name);
+    console.log(happy.age);
+
+    console.log(dogs[0].name);
+
+    // 객체 -> 문자열 : 직렬화
+    // 문자열 -> 객체 : 역직렬화
+
+    console.log(happy);
+
+    const objectString = JSON.stringify(happy);
+    console.log(objectString);
+
+    const jsonObject = JSON.parse(objectString);
+    console.log(jsonObject);
+
+
+    // 이름 홍길동, 나이 40, 거주지 서울 인 사람 만들기
+    // 홍길동의 자식으로 이름 홍길순, 나이 10, 거주지 서울, 이름 홍길자, 나이 5, 거주지 서울
+    // 홍길동을 객체로 표현해주세요.
+
+
+
+</script>
+</html>

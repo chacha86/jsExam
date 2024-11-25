@@ -49,6 +49,32 @@
     // 홍길동의 자식으로 이름 홍길순, 나이 10, 거주지 서울, 이름 홍길자, 나이 5, 거주지 서울
     // 홍길동을 객체로 표현해주세요.
 
+    const hong = {
+        name: "홍길동",
+        age: 40,
+        address : "서울",
+        children : [
+            {
+                name: "홍길순",
+                age : 10,
+                address : "서울"
+            },
+            {
+                name: "홍길자",
+                age: 5,
+                address: "서울"
+            }
+        ]
+    }
+
+    console.log(hong.children[0].name);
+
+    // 홍길동을 직렬화 해서 출력
+    const hongStr = JSON.stringify(hong);
+    console.log(hongStr);
+
+    // 직렬화된 홍길동을 다시 역직렬화 해서 출력
+    console.log(JSON.parse(hongStr));
 
 
 </script>

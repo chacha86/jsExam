@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="id1">내용1</div>
+<div class="con">내용2</div>
+<div class="con">내용3</div>
+
+</body>
+<script>
+    const el1 = document.getElementById("id1");
+    console.log(el1);
+    console.log(el1.innerText);
+
+    const el2 = document.querySelector("#id1");
+    console.log(el2.innerText);
+
+    const divs = document.getElementsByTagName("div");
+    console.log(divs);
+
+    const divs2 = document.querySelectorAll("div"); // querySelector 제일 위에 있는 거 하나만 가져옴. querySelectorAll은 다 가져옴
+    console.log(divs2);
+
+    // nodeList는 선언적 표현 가능
+
+    divs2.forEach((el) => {
+        console.log(el.innerText);
+    }); // map과 비슷하지만 반환이 없다.
+
+    document.querySelectorAll(".con").forEach((el) => {
+        console.log(el.innerText);
+    });
+
+</script>
+</html>

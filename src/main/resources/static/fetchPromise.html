@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  // promise 방식 -> 비동기 처리를 체인 형식으로 싱크 맞추는 방식
+  // 모던한 방식
+   fetch("http://localhost:8080/test")
+     .then((res) => {
+       console.log("fetch 완료 !!");
+       console.log(res);
+       return res.text();
+     })
+     .then((text) => {
+        console.log(text);
+     }); // 콜백 함수 사용
+
+</script>
+</html>

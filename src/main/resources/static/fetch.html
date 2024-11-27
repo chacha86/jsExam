@@ -9,15 +9,19 @@
 <script>
     // ajax => asynchronous javascript and xml
 
-      // 비동기 -> 서버와 렌더링을 독립적으로
-      // 동기 -> 서버와 렌더링을 일치
+     // 비동기 -> 서버와 렌더링 독립적으로 -> 데이터 가져오는데 10초 걸린다. => 데이터는 내부적으로 가져오고 화면은 그냥 그린다. => 10초 뒤에 일부분 그린다.
+      // 동기 -> 서버와 렌더링을 일치. 서버에서 데이터 가져오는 10초 걸린다. => 화면이 10초 뒤에 그려짐
 
       // 자바스크립트로 http 통신하는 방법 - fetch
       // 기본적으로 get 요청
 
+    // async await => 비동기 처리할 때는 서버 응답이 완료된 후 작업해야 하기 때문에 await으로 싱크를 맞춰줘야 함.
+    // await을 사용하는 함수는 async 함수이다.
     async function test() {
-      const rst = await fetch('http://localhost:8080/test');
-      console.log(rst.text());
+      const response = await fetch('http://localhost:8080/test'); // 응답이라는 서버 마음. await은 서버 응답이 완료되면 처리
+      console.log(response);
+      const text = response.text(); // body 부분을 문자열로 가져옴
+      console.log(text);
     }
 
     test();

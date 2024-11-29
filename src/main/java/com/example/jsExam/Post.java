@@ -19,4 +19,14 @@ public class Post {
 
     @ManyToOne
     private Member author;
+
+    public PostDto toDto() {
+        PostDto dto = PostDto.builder()
+                .title(this.title)
+                .body(this.body)
+                .authorName(author.getName())
+                .build();
+
+        return dto;
+    }
 }

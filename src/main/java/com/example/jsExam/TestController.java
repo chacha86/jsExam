@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -17,6 +18,11 @@ public class TestController {
 
     @PostConstruct
     public void init() {
+
+        if( memberRepository.count() > 0 ) {
+            return;
+        }
+
         Member m1 = Member.builder()
                 .name("홍길동")
                 .build();
@@ -50,9 +56,16 @@ public class TestController {
 
     @GetMapping("/post")
     @ResponseBody
-    public List<Post> post() {
+    public List<PostDto> post() {
 
         List<Post> posts = postRepository.findAll();
-        return posts; // 스프링부트 컨트롤러에서 객체를 리턴하면 JSON으로 변환된다.
+        List<PostDto> postDtos = new ArrayList<>();
+
+        for(Post post : posts) {
+            PostDto dto = post.toDto();
+            postDtos.add(dto);
+        }
+
+        return postDtos; // 스프링부트 컨트롤러에서 객체를 리턴하면 JSON으로 변환된다.
     }
 }
